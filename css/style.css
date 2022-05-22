@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to right bottom, #eaff02, #ebed00, #eadc00, #e7cb00, #e3bb00);
+    background-image: linear-gradient(to right bottom, #eaff02, #ebed00, #ebed00, #eadc00, #e3bb00);
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,4 +19,10 @@ body {
     margin: 10% auto;
     text-align: center;
     padding: 1%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

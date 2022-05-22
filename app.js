@@ -1,4 +1,4 @@
-const target = document.querySelector('.listing ul')
+const target = document.querySelector('.uncom')
 
 const buttons = document.querySelectorAll('.btn-1');
 for (let button of buttons) {
