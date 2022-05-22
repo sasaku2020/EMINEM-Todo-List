@@ -3,7 +3,11 @@
 }
 
 body {
+<<<<<<< HEAD
     background-image: linear-gradient(120deg, #02dfff, #00beff, #0099ff, #006eff, #0032e3);
+=======
+    background-image: linear-gradient(to right bottom, #02dfff, #00beff, #0099ff, #006eff, #0032e3);
+>>>>>>> 2dcb183d54b7f6aa8c4c858fbf4e2ad4fa96ac6b
     height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
