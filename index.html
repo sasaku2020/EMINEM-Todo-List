@@ -5,36 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>M Todo List</title>
+    <title>EMINEM Todo List</title>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="hero">M&M Todo List</h1>
+        <h1 class="hero">EMINEM Todo List</h1>
         <main>
-            <div class="inp">
+            <form class="inp">
                 <input type="text" class="addtext">
-                <button class="btn-1">+</button>
+                <button class="btn-1" type="submit">
+                    <i class="fas fa-plus-square"></i>
+                </button>
                 <select>
                 <option>All</option>
                 <option>Completed</option>
                 <option>Inprogress</option>
-            </select>
-            </div>
+                </select>
+            </form>
 
             <div class="listing">
                 <p class="lst">inprogress</p>
                 <ul class="uncom">
-                    <li>date J Lopez</li>
-                    <li>have 4 children</li>
+                    
+                    <li class="liit"><span>date J Lopez</span>
+                        <button class="btn2"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn3"><i class="fas fa-check"></i></button>
+                    </li>
+                    <li class="liit"><span>have 4 children</span>
+                        <button class="btn2"><i class="fa-solid fa-trash"></i></button>
+                        <button class="btn3"><i class="fas fa-check"></i></button>
+                    </li>
                 </ul>
                 <p class="lst">Completed</p>
                 <ul class="com">
-                    <li>Become a raper</li>
-                    <li>Become Famous</li>
+                    <li class="liit">Become a raper</li>
+                    <li class="liit">Become Famous</li>
                 </ul>
             </div>
         </main>
