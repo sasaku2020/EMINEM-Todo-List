@@ -1,5 +1,5 @@
 const target = document.querySelector('.uncom');
-const delbtn = document.querySelectorAll('.btn2');
+
 
 
 
@@ -51,14 +51,10 @@ for (let button of buttons) {
 
 
 //deleting a todo 
-delbtn.addEventListener('click', delitem);
+const delbtn = document.querySelectorAll('.btn2');
+const liitem = document.querySelectorAll('.liitem');
 
-    function delitem (e){
-        const item = e.target;
-
-        if (item.classList[0] === "btn2"){
-            const todo = item.parentElement;
-            todo.remove();
-        }
-    }
+delbtn.addEventListener("click",(eo) => {
+    liitem[0].remove();
+})
  
