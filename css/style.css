@@ -52,6 +52,7 @@ form {
     border-radius: 2.5px;
     outline: none;
     color: gray;
+    margin-left: 4rem;
 }
 
 select {
