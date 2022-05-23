@@ -4,6 +4,7 @@ const addtext = document.querySelector(".addtext");
 const btndel = document.querySelectorAll(".btndel");
 const filtering = document.querySelector(".filter");
 
+document.addEventListener("DOMContentLoaded",getTodos);
 
 ///////// creating a todo 
 const addbutton = document.querySelector('.btnadd');
@@ -17,33 +18,34 @@ addbutton.addEventListener('click', addfunc => {
     } else {
 
         // adding div
-        const todo = document.createElement('div');
-        todolist.appendChild(todo);
-        todo.classList.add('lidiv');
+        const todoDiv = document.createElement('div');
+        todolist.appendChild(todoDiv);
+        todoDiv.classList.add('lidiv');
 
         // adding li
         const li = document.createElement('li');
-        todo.appendChild(li);
+        todoDiv.appendChild(li);
         li.classList.add('liitem');
         li.innerHTML = addtext.value;
-
-
-        // clearing input content
-        addtext.value = "";
-
 
         // adding delete button 
         const btndel = document.createElement('button');
         btndel.classList.add('btndel');
         btndel.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        todo.appendChild(btndel);
+        todoDiv.appendChild(btndel);
 
 
         // adding compelete button 
         const btncom = document.createElement('button');
         btncom.classList.add('btncom');
         btncom.innerHTML = '<i class="fas fa-check"></i>';
-        todo.appendChild(btncom);
+        todoDiv.appendChild(btncom);
+
+        // adding to local storage
+        savelocaly(addtext.value);
+
+        // clearing input content
+        addtext.value = "";
     }
 });
 
@@ -54,10 +56,12 @@ todolist.addEventListener("click", function delfunc(e) {
     const item = e.target;
 
     if (item.classList[0] === 'btndel') {
-        const catcher = item.parentElement;
-        catcher.classList.add('fall');
-        catcher.addEventListener("transitionend", function() {
-            catcher.remove();
+        const todo = item.parentElement;
+        todo.classList.add('fall');
+        removeLocalTodos(todo);
+        todo.addEventListener("transitionend", function() {
+            todo.remove();
+            
         })
     } else {
         console.log(item.parentElement);
@@ -101,3 +105,73 @@ function filterTodos(e) {
     });
 }
 
+// saving it
+
+  
+function savelocaly (todo){
+    let todos;
+
+    if(localStorage.getItem('todos') === null){
+        todos = [];
+    }else {
+        todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    
+    todos.push(todo);   
+    localStorage.setItem('todos', JSON.stringify(todos));   
+
+}
+
+
+
+function getTodos(){
+    // CHECK --- HEY Do I already have thing in there?
+    let todos;
+        if(localStorage.getItem("todos") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    todos.forEach(function(todo){
+
+    // adding div
+    const todoDiv = document.createElement('div');
+    todolist.appendChild(todoDiv);
+    todoDiv.classList.add('lidiv');
+
+    /// adding li
+    const li = document.createElement('li');
+    todoDiv.appendChild(li);
+    li.classList.add('liitem');
+    li.innerHTML = todo;
+
+
+    // adding delete button 
+    const btndel = document.createElement('button');
+    btndel.classList.add('btndel');
+    btndel.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    todoDiv.appendChild(btndel);
+
+
+    // adding compelete button 
+    const btncom = document.createElement('button');
+    btncom.classList.add('btncom');
+    btncom.innerHTML = '<i class="fas fa-check"></i>';
+    todoDiv.appendChild(btncom);
+    });
+}
+
+
+
+  function removeLocalTodos(todo){
+    // CHECK --- HEY DoIalready have thing in there?
+     let todos;
+    if(localStorage.getItem("todos") === null){
+       todos = [];
+     }else {
+       todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    const todoIndex=todo.children[0].innerText;
+    todos.splice(todos.indexOf(todoIndex),1);
+    localStorage.setItem("todos",JSON.stringify(todos));
+   }
