@@ -1,8 +1,8 @@
-const target = document.querySelector('.listul');
-const comp = document.querySelector('.com');
+// Selectors
+const todolist = document.querySelector('.listul');
 const addtext = document.querySelector(".addtext");
 const btndel = document.querySelectorAll(".btndel");
-
+const filter = document.querySelector(".filter");
 
 
 ///////// creating a todo 
@@ -17,13 +17,13 @@ addbutton.addEventListener('click', addfunc => {
     } else {
 
         // adding div
-        const lidiv = document.createElement('div');
-        target.appendChild(lidiv);
-        lidiv.classList.add('lidiv');
+        const todo = document.createElement('div');
+        todolist.appendChild(todo);
+        todo.classList.add('lidiv');
 
         // adding li
         const li = document.createElement('li');
-        lidiv.appendChild(li);
+        todo.appendChild(li);
         li.classList.add('liitem');
         li.innerHTML = addtext.value;
         li.classList.add('txtspan');
@@ -36,23 +36,21 @@ addbutton.addEventListener('click', addfunc => {
         const btndel = document.createElement('button');
         btndel.classList.add('btndel');
         btndel.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        lidiv.appendChild(btndel);
+        todo.appendChild(btndel);
 
 
         // adding compelete button 
         const btncom = document.createElement('button');
         btncom.classList.add('btncom');
         btncom.innerHTML = '<i class="fas fa-check"></i>';
-        lidiv.appendChild(btncom);
+        todo.appendChild(btncom);
     }
 });
 
 
 
-/////// delete a todo 
-
-
-target.addEventListener("click", function delfunc(e) {
+// delete a todo 
+todolist.addEventListener("click", function delfunc(e) {
     const item = e.target;
 
     if (item.classList[0] === 'btndel') {
@@ -65,8 +63,37 @@ target.addEventListener("click", function delfunc(e) {
         console.log(item.parentElement);
     }
     if (item.classList[0] === 'btncom') {
-        comp.appendChild(item.parentElement);
+        const catcher = item.parentElement;
+        catcher.classList.toggle('compstatus');
     } else {
         console.log(item.parentElement);
     }
 });
+
+// filter todoes 
+filter.addEventListener("click", filtertodoes);
+function filtertodoes(e) {
+    const todos = todolist.childNodes;
+
+    todos.forEach(function(todo){
+        switch(e.target.value){
+            case "all":
+                    todo.style.display = "flex";
+                break;
+            case "comp":
+                if(todo.classList.contains('compstatus')){
+                    todo.style.display = 'flex';
+                }else{
+                    todo.style.display = "none";
+                }
+                break;
+            case "inpro":
+            if(!todo.classList.contains('inpro')){
+                todo.style.display = "flex";
+            }else{
+                todo.style.display = "none";
+            }
+            break;
+        }
+    })    
+};
