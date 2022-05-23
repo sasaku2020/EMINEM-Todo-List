@@ -64,13 +64,13 @@ todolist.addEventListener("click", function delfunc(e) {
             
         })
     } else {
-        console.log(item.parentElement);
+        
     }
     if (item.classList[0] === 'btncom') {
         const catcher = item.parentElement;
         catcher.classList.toggle('compstatus');
     } else {
-        console.log(item.parentElement);
+        
     }
 });
 
