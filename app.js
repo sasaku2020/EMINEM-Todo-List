@@ -2,7 +2,7 @@
 const todolist = document.querySelector('.listul');
 const addtext = document.querySelector(".addtext");
 const btndel = document.querySelectorAll(".btndel");
-const filter = document.querySelector(".filter");
+const filtering = document.querySelector(".filter");
 
 
 ///////// creating a todo 
@@ -26,7 +26,7 @@ addbutton.addEventListener('click', addfunc => {
         todo.appendChild(li);
         li.classList.add('liitem');
         li.innerHTML = addtext.value;
-        li.classList.add('txtspan');
+
 
         // clearing input content
         addtext.value = "";
@@ -71,29 +71,33 @@ todolist.addEventListener("click", function delfunc(e) {
 });
 
 // filter todoes 
-filter.addEventListener("click", filtertodoes);
-function filtertodoes(e) {
-    const todos = todolist.childNodes;
+filtering.addEventListener("click", filterTodos);
 
-    todos.forEach(function(todo){
-        switch(e.target.value){
-            case "all":
-                    todo.style.display = "flex";
+
+function filterTodos(e) {
+    const todos = [...todolist.children];
+    todos.forEach(function(todo) {
+        switch (e.target.value) {
+            case "all" :
+                todo.style.display = "flex";
                 break;
-            case "comp":
-                if(todo.classList.contains('compstatus')){
-                    todo.style.display = 'flex';
-                }else{
+            case "completed":
+                if(todo.classList.contains("compstatus")) {
+                    todo.style.display = "flex";
+                }
+                else {
                     todo.style.display = "none";
                 }
                 break;
-            case "inpro":
-            if(!todo.classList.contains('inpro')){
-                todo.style.display = "flex";
-            }else{
-                todo.style.display = "none";
-            }
-            break;
+            case "uncompleted":
+                if(!todo.classList.contains("compstatus")) {
+                    todo.style.display = "flex";
+                }
+                else {
+                    todo.style.display = "none";
+                }
+                break;
         }
-    })    
-};
+    });
+}
+
