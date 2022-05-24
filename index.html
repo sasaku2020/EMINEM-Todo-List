@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,24 +15,34 @@
 
 <body>
     <div class="container">
-        <h1 class="hero">EMINEM Todo List</h1>
+        <!-- header -->
+        <header>
+            <h1 class="hero">EMINEM Todo List</h1>
+        </header>
+
+        <!-- main -->
         <main>
+
+            <!-- form -->
             <form class="inp">
                 <input type="text" class="addtext">
-                <button class="btn-1" type="submit">
+                <button class="btnadd" type="submit">
                     <i class="fas fa-plus-square"></i>
                 </button>
-                <select>
+
+                <!-- <select>
                 <option>All</option>
                 <option>Completed</option>
                 <option>Inprogress</option>
-                </select>
+                </select> -->
+
             </form>
 
+            <!-- listing -->
             <div class="listing">
-                
+                <!-- uncompleted -->
                 <ul class="uncom">
-                    <p class="lst">inprogress</p>
+                    <p class="lstp">inprogress</p>
                     <li class="liitem"><span>date J Lopez</span>
                         <button class="btn2"><i class="fa-solid fa-trash"></i></button>
                         <button class="btn3"><i class="fas fa-check"></i></button>
@@ -45,14 +52,15 @@
                         <button class="btn3"><i class="fas fa-check"></i></button>
                     </li>
                 </ul>
-                
+                <!-- completed -->
                 <ul class="com">
-                    <p class="lst">Completed</p>
+                    <p class="lstp">Completed</p>
                     <li class="liitem">Become a raper</li>
                     <li class="liitem">Become Famous</li>
                 </ul>
             </div>
         </main>
+
     </div>
 
     <script src="app.js"></script>

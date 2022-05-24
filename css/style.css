@@ -28,68 +28,70 @@ body {
     padding: 1%;
 }
 
-h1,main {
+h1,
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.addtext,.btn-1 {
-    padding:.5rem;
+.addtext,
+.btnadd {
+    padding: .5rem;
     font-size: 2rem;
     border: none;
     background-color: #fff;
-    
 }
 
-select{
+select {
     font-size: .9rem;
     margin: 0 0 .4vh 1vh;
-    padding:.8rem;
-
+    padding: .8rem;
 }
-.btn-1{
-    color:#00beff;
+
+.btnadd {
+    color: #00beff;
     background-color: #fff;
     cursor: pointer;
-    transition:all .3s ease;
-    margin:0 0 0 -5px ;
+    transition: all .3s ease;
+    margin: 0 0 0 -5px;
 }
 
-.btn-1:hover{
-    background-color:#00beff;
+.btnadd:hover {
+    background-color: #00beff;
     color: #fff;
 }
 
-.uncom,.com{
+.uncom,
+.com {
     min-width: 30vw;
-    list-style-type:none;
+    list-style-type: none;
 }
+
 .uncom li,
-.com li{
+.com li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #00bfff91;
     margin: .4vh;
-    padding:0 .5vw ;
+    padding: 0 .5vw;
     max-width: 50vw;
-    overflow:hidden;
+    overflow: hidden;
 }
-    
+
 .uncom li span,
-.com li span{
+.com li span {
     flex: 1;
-
-    
 }
 
-.btn2, .btn3{
-    color:#fff;
+.btn2,
+.btn3 {
+    color: #fff;
     background-color: #00bfff91;
     border: none;
-    transition:all .3s ease;
+    transition: all .3s ease;
     padding: .6rem;
     margin: .2rem;
     font-size: 1rem;

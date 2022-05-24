@@ -1,10 +1,8 @@
 const target = document.querySelector('.uncom');
 
 
-
-
 //creating a todo 
-const buttons = document.querySelectorAll('.btn-1');
+const buttons = document.querySelectorAll('.btnadd');
 for (let button of buttons) {
     this.addEventListener('click', function() {
 
@@ -43,7 +41,7 @@ for (let button of buttons) {
             btn3.classList.add('btn3');
             li.appendChild(btn3);
             btn3.innerHTML = '<i class="fas fa-check"></i>';
-        
+
         }
 
     })
@@ -54,7 +52,6 @@ for (let button of buttons) {
 const delbtn = document.querySelectorAll('.btn2');
 const liitem = document.querySelectorAll('.liitem');
 
-delbtn.addEventListener("click",(eo) => {
+delbtn.addEventListener("click", (eo) => {
     liitem[0].remove();
 })
- 
