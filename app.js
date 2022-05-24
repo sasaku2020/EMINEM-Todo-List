@@ -51,20 +51,22 @@ addbutton.addEventListener('click', addfunc => {
 
 /////// delete a todo 
 
-for (const item of btndel) {
-    target.addEventListener("click", function delfunc(e) {
-        const item = e.target;
 
-        if (item.classList[0] === 'btndel') {
-            const catcher = item.parentElement;
+target.addEventListener("click", function delfunc(e) {
+    const item = e.target;
+
+    if (item.classList[0] === 'btndel') {
+        const catcher = item.parentElement;
+        catcher.classList.add('fall');
+        catcher.addEventListener("transitionend", function() {
             catcher.remove();
-        } else {
-            console.log(item.parentElement);
-        }
-        if (item.classList[0] === 'btncom') {
-            comp.appendChild(item.parentElement);
-        } else {
-            console.log(item.parentElement);
-        }
-    })
-};
+        })
+    } else {
+        console.log(item.parentElement);
+    }
+    if (item.classList[0] === 'btncom') {
+        comp.appendChild(item.parentElement);
+    } else {
+        console.log(item.parentElement);
+    }
+});
