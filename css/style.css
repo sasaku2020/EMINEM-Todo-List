@@ -57,6 +57,8 @@ select {
     font-size: .9rem;
     margin: 0 0 .4vh 1vh;
     padding: .8rem;
+    width: 10rem;
+    height: 1rem;
 }
 
 .select {
@@ -64,6 +66,16 @@ select {
     display: inline-block;
     position: relative;
     overflow: hidden;
+}
+
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 5;
+    right: 8px;
+    background-color: #00beff;
+    pointer-events: none;
+    padding: .25rem;
 }
 
 .filter {
