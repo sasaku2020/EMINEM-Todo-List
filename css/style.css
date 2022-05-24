@@ -9,7 +9,7 @@ body {
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-weight: 500;
+    font-weight: 100;
 }
 
 .container {
@@ -26,6 +26,7 @@ body {
     margin: 10% auto;
     text-align: center;
     padding: 1%;
+    font-weight: 500;
 }
 
 h1,
@@ -69,37 +70,45 @@ select {
     list-style-type: none;
 }
 
-.uncom li,
-.com li {
+.uncom div,
+.com div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #00bfff91;
+    background-color: #00bfff;
     margin: .4vh;
     padding: 0 .5vw;
     max-width: 50vw;
-    overflow: hidden;
 }
 
-.uncom li span,
-.com li span {
+.uncom li,
+.com li {
     flex: 1;
 }
 
-.btn2,
-.btn3 {
+.btndel,
+.btncom {
     color: #fff;
     background-color: #00bfff91;
     border: none;
     transition: all .3s ease;
-    padding: .6rem;
-    margin: .2rem;
+    padding: .2rem;
+    margin: .2rem .5rem;
     font-size: 1rem;
     align-self: flex-end;
+    cursor: pointer;
+}
+
+.btndel i,
+.btncom i {
     pointer-events: none;
 }
 
-.btn3 {
+.btncom {
     color: rgb(2, 241, 2);
     font-weight: 700;
+}
+
+.lidiv {
+    display: flex;
 }
