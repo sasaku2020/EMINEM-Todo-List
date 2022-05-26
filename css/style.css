@@ -3,13 +3,10 @@
 }
 
 body {
-    background-image: linear-gradient(120deg, #02dfff, #00beff, #0099ff, #006eff, #0032e3);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #1f364d;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .container {
@@ -17,13 +14,14 @@ body {
     flex-direction: column;
     margin: 0 auto;
     max-width: 80%;
+    z-index: 0;
 }
 
 .hero {
-    font-size: 8em;
+    font-size: 6rem;
     word-spacing: 2px;
     letter-spacing: 2px;
-    margin: 10rem 0 5rem 0;
+    margin: 15vh 0 5rem 0;
     text-align: center;
     padding: 1%;
     font-weight: 500;
@@ -32,143 +30,37 @@ body {
 h1,
 main {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-form {
+.clock {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
-.addtext,
-.btnadd {
-    padding: .5rem;
-    font-size: 1.7rem;
-    width: 20vw;
-    height: 5.3vh;
-    border: none;
-    background-color: #fff;
-    border-radius: 2.5px;
-    outline: none;
-    color: gray;
-    margin-left: 4rem;
-}
-
-select {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    outline: none;
-}
-
-.select {
-    position: relative;
-    overflow: hidden;
-    margin: 1rem;
-}
-
-.select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #00beff;
-    padding: 1rem;
-    pointer-events: none;
-}
-
-.select:hover::after {
-    color: #00beff;
-    background-color: #fff;
-}
-
-select {
-    background-color: #fff;
-    color: #00beff;
-    cursor: pointer;
-    padding: 1rem;
-    width: 10rem;
-    border-radius: 5px;
-}
-
-.filter {
-    font-size: 1rem;
-    border-radius: 2.5px;
-}
-
-.btnadd {
-    color: #00beff;
-    background-color: #fff;
-    cursor: pointer;
-    transition: all .3s ease;
-    margin: 0 0 0 -5px;
-    width: 3vw;
-}
-
-.btnadd:hover {
-    background-color: #00beff;
-    color: #fff;
-}
-
-.listul {
-    min-width: 30vw;
-    list-style-type: none;
-}
-
-.listul div {
+.timebox {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    background-color: #00bfff;
-    margin: .4vh;
-    padding: 0 .5vw;
-    max-width: 50vw;
-}
-
-.listul li {
-    flex: 1;
-}
-
-.compstatus {
-    opacity: 0.7;
-    text-decoration: line-through;
-}
-
-.btndel,
-.btncom {
+    width: 11rem;
+    height: 11rem;
+    margin: 1.5vw;
+    font-size: 2rem;
+    background-color: #0e2439;
     color: #fff;
-    background-color: #00bfff91;
-    border: none;
-    transition: all .3s ease;
-    padding: .2rem;
-    margin: .2rem .5rem;
-    font-size: 1rem;
-    align-self: flex-end;
-    cursor: pointer;
+    font-weight: 100;
+    letter-spacing: .3rem;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 30px 30px -7px;
 }
 
-.btndel i,
-.btncom i {
-    pointer-events: none;
-}
-
-.btncom {
-    color: rgb(2, 241, 2);
-    font-weight: 300;
-}
-
-.lidiv {
-    display: flex;
-}
-
-.fall {
-    transform: translateY(8rem) rotateZ(20deg);
-    opacity: .0;
-    transition: all .7s ease;
+.clock span {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 footer {
@@ -191,6 +83,7 @@ footer img {
     width: 5rem;
     height: 10rem;
     margin: 1rem;
+    z-index: 1;
 }
 
 footer img:hover {
@@ -201,4 +94,5 @@ footer img:hover {
     bottom: 0;
     right: 0;
     transition: all .7s ease;
+    z-index: 1;
 }

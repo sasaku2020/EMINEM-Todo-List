@@ -10,74 +10,49 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>EMINEM Todo List</title>
+    <title>George clooney watch</title>
 </head>
 
 <body>
     <div class="container">
-        <!------ header ------>
+
+
+        <!------------ header ------------>
         <header>
-            <h1 class="hero">EMINEM Todo List</h1>
+            <h1 class="hero">George clooney watch</h1>
         </header>
 
-        <!------ main ------>
+
+        <!------------ main ------------>
         <main>
-
-            <!------ form ------>
-            <form class="inp">
-                <input type="text" class="addtext">
-                <button class="btnadd" type="submit">
-                    <i class="fas fa-plus-square"></i>
-                </button>
-
-                <div class="select">
-                    <select name="todos" class="filter">
-                       <option value="all">All</option>
-                       <option value="completed">Completed</option>
-                       <option value="uncompleted">Inprogress</option>
-                    </select>
+            <!------------ clock ------------>
+            <section class="clock">
+                <div class="timebox">
+                    <p>Hours</p>
+                    <div class="hours"></div>
                 </div>
-            </form>
-
-            <!------ listing ------>
-            <section class="listing">
-                <!------ uncompleted ------>
-                <ul class="listul">
-
-                    <div class="lidiv">
-                        <li class="liitem">date J Lopez</li>
-                        <button class="btndel"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btncom"><i class="fas fa-check"></i></button>
-
-                    </div>
-                    <div class="lidiv">
-                        <li class="liitem">have 4 children</li>
-                        <button class="btndel"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btncom"><i class="fas fa-check"></i></button>
-
-                    </div>
-
-                    <div class="lidiv compstatus">
-                        <li class="liitem">Become a raper</li>
-                        <button class="btndel"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btncom"><i class="fas fa-check"></i></button>
-
-                    </div>
-                    <div class="lidiv compstatus">
-                        <li class="liitem">Become Famous</li>
-                        <button class="btndel"><i class="fa-solid fa-trash"></i></button>
-                        <button class="btncom"><i class="fas fa-check"></i></button>
-
-                    </div>
-                </ul>
-
+                <span>:</span>
+                <div class="timebox">
+                    <p>Mins</p>
+                    <div class="Mins"></div>
+                </div>
+                <span>:</span>
+                <div class="timebox">
+                    <p>secs</p>
+                    <div class="secs"></div>
+                </div>
             </section>
-            <footer>
-                <p>Made by SaSa in</p>
-                <img src="img/time.jpeg" class="bug-img" alt="time-consumed" poster="">
-            </footer>
-        </main>
+            <section class="date">
+                <div class="day">
 
+                </div>
+            </section>
+
+        </main <!------------ footer ------------>
+        <footer>
+            <p>Made by SaSa in</p>
+            <img src="" class="bug-img" alt="time-consumed" poster="">
+        </footer>
     </div>
 
     <script src="app.js"></script>
